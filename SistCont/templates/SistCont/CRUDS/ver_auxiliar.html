@@ -1,0 +1,43 @@
+{% extends 'SistCont/main.html' %}
+
+{% block content %}
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        
+                        <h2>Detalle <b>Auxiliar</b></h2> 
+                        
+                    </div>
+                </div>
+            </div>
+            {{auxiliar.id}}
+            <br>
+            {{auxiliar.id_EC}}
+            <br>
+            {{auxiliar.id_aux}}
+            <br>
+            {{auxiliar.nombre_aux}}
+            <br>
+            <!--{% for i in auxiliar.cuenta.all %}
+            {{i.descripcion}}
+            {% endfor %}-->
+            {{auxiliar.cuenta}}
+            <br>
+            {{auxiliar.fecha}}
+            <br>
+            {{auxiliar.monto}}
+            <br>
+            {{auxiliar.estado}}
+            <div class="modal-footer">
+                <div class="bd-example">
+                    <a href="{% url 'lista_auxiliar' %}" type="button" class="btn btn-danger">Cancelar</a>
+                    <a href="{% url 'editar_auxiliar' auxiliar.id %}" type="button" class="btn btn-warning">Editar</a>
+                </div>
+            </div>
+        </div>
+    </div>        
+</div>
+{% endblock %}

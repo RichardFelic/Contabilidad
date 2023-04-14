@@ -1,0 +1,27 @@
+{% extends 'SistCont/main.html' %}
+
+{% block content %}
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper"> 
+    <div class="table-title" >
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Edición <b> Tipo Moneda</b></h2> 
+            </div>
+        </div>
+    </div>
+<form method="POST"> 
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="modal-footer">
+        <div class="bd-example">
+    <a href="{% url 'lista_tipomoneda' %}" type="button" class="btn btn-danger">Cancelar</a>
+    <button class="btn btn-success" type="submit">Agregar</button>
+</div>
+    </div>
+    
+</form>
+        </div>
+    </div>
+{% endblock %}

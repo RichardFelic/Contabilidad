@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a href="{% url 'home' %}" class="navbar-brand">Sistema<b> Contabilidad</b></a>  		
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+        <div class="navbar-nav">
+            <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+            <a href="{% url 'lista_catalogocuenta' %}" class="nav-item nav-link">Cuentas Contables</a>			
+            <a href="{% url 'lista_tipocuenta' %}" class="nav-item nav-link">Tipos de cuenta</a>
+            <a href="{% url 'lista_tipomoneda' %}" class="nav-item nav-link">Tipos de moneda</a>
+            <a href="{% url 'lista_auxiliar' %}" class="nav-item nav-link">Auxiliares</a>
+            <div class="nav-item dropdown">
+                <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">Otros</a>
+                <div class="dropdown-menu">		
+                    <a href="{% url 'lista_entradacontable' %}" class="dropdown-item">Entrada contable</a>			
+                </div>
+            </div>
+        </div>
+        <form class="navbar-form form-inline ml-auto">
+            <div class="input-group search-box">
+                <input type="text" class="form-control">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-danger"><span>Buscar</span></button>
+                </div>
+            </div>
+        </form>		
+    </div>
+</nav>

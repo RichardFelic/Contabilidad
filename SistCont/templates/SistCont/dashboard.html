@@ -1,0 +1,84 @@
+
+{% extends 'SistCont/main.html' %}
+
+{% block content %}
+<br>
+<h1>Proyecto de Contabilidad</h1>
+<hr>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3 " id="total-orders">
+			  	<div class="card-header alert alert-secondary">
+			  		<h5 class="card-title ">Total Cuentas</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title text-dark">{{num_catalogocuentas}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header alert alert-secondary">
+			  		<h5 class="card-title">Total de Auxiliares</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title text-dark">{{num_auxiliar}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<hr>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card text-bg-primary">
+            <div class="card-body">
+              <h5 class="card-title">Cuentas Contables</h5>
+              <div class="modal-footer">
+                <a href="{% url 'lista_catalogocuenta' %}" class="btn btn-success">Ir a Cuentas Contables</a>
+               </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="card text-bg-primary">
+            <div class="card-body">
+              <h5 class="card-title">Tipos de Cuenta</h5>
+              <div class="modal-footer">
+                <a href="{% url 'lista_tipocuenta' %}" class="btn btn-success">Ir a Tipo de Cuenta </a>
+               </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+        <div class="card text-bg-primary">
+          <div class="card-body">
+            <h5 class="card-title">Tipos de Moneda</h5>
+            <div class="modal-footer">
+                <a href="{% url 'lista_tipomoneda' %}" class="btn btn-success">Ir a Tipo de Moneda</a>
+               </div>
+          </div>
+         </div>
+        </div>  
+        
+        <div class="col">
+            <div class="card text-bg-primary">
+              <div class="card-body">
+                <h5 class="card-title">Auxiliares</h5>
+                <div class="modal-footer">
+                    <a href="{% url 'lista_auxiliar' %}" class="btn btn-success">Ir a Auxiliares</a>
+                   </div>
+              </div>
+             </div>
+            </div> 
+    </div>
+{% endblock %}

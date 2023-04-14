@@ -1,0 +1,52 @@
+{% extends 'SistCont/main.html' %}
+
+{% block content %}
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Auxil<b>iares</b></h2> 
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="{% url 'nuevo_auxiliar' %}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Añadir</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover" id="table_id">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Asiento</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Transferido</th>
+                        <th>Acciones</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>{% for i in auxiliar %}
+                        <td>{{i.id}}</td>
+                        <th>{{i.id_EC}}</th>
+                        <td>{{i.nombre_aux}}</td>
+                        <td>{{i.estado}}</td>
+                        <td>{{i.get_estado_display}}</td>
+                        <td>
+                            <div class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle"><i class="material-icons" data-toggle="tooltip" title="Acciones">&#xe5d3;</i></a>
+                                <div class="dropdown-menu">	
+                                    <a href="/editar_auxiliar/{{i.id}}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                    <a href="{% url 'eliminar_auxiliar' i.id %}" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                    <a href="{% url 'ver_auxiliar' i.id %}" class="view" ><i class="material-icons" data-toggle="tooltip" title="View" >&#xE417;</i></a>
+                                    <a href="/transferir_registro/{{i.id}}" class="trans"><i class="material-icons" data-toggle="tooltip" title="Send">&#xE163;</i></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>        
+</div>
+{% endblock %}

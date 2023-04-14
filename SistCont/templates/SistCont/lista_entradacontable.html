@@ -1,0 +1,51 @@
+{% extends 'SistCont/main.html' %}
+
+{% block content %}
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Cuentas <b>Contables</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="{% url 'nueva_catalogocuenta' %}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Añadir</span></a>
+                        						
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover" id="table_id">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Descripcion</th>
+                        <th>No. Asiento</th>
+                        <th>Tipo de Cuentas</th>
+                        <th>Tipo de Movimiento</th>  
+                        <th>Fecha Asiento</th>
+                        <th>Monto Asiento</th>
+                        <th>Estado</th>
+                        <th>Acciones</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>{% for i in entrada %}
+                        <td>{{i.id_EC}}</td>
+                        <td>{{i.descripcion}}</td>
+                        <td>{{i.id_aux}}</td>
+                        <td>{{i.cuenta}}</td>
+                        <td>{{i.origen}}</td>
+                        <td>{{i.fecha}}</td>
+                        <td>{{i.monto}}</td>
+                        <td>{{i.estado}}</td>
+                        <td>
+                            <a href="{% url 'eliminar_entradacontable' i.id %}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>                        </td>
+                    </tr>{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>        
+</div>
+{% endblock %}

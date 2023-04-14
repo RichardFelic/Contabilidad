@@ -1,0 +1,43 @@
+{% extends 'SistCont/main.html' %}
+
+{% block content %}
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Tipos de <b>Cuenta</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="{% url 'nuevo_tipocuenta' %}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Añadir</span></a>
+                        						
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover" id="table_id">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Descripcion</th>
+                        <th>Origen</th>  
+                        <th>Estado</th>
+                        <th>Acciones</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>{% for i in tipo %}
+                        <td>{{i.id}}</td>
+                        <td>{{i.descripcion}}</td>
+                        <td>{{i.origen}}</td>
+                        <td>{{i.estado}}</td>
+                        <td>
+                            <a href="/editar_tipocuenta/{{i.id}}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="{% url 'eliminar_tipocuenta' i.id %}" class="delete" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>                        </td>
+                    </tr>{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>        
+</div>
+{% endblock %}
