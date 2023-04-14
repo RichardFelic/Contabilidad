@@ -43,7 +43,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('SistCont.urls')),
     #SWAGGER
-    path('api/', include(router_auxiliares.urls)),
+    path('api_aux/', include(router_auxiliares.urls)),
     path('api_moneda/', include(router_tipos.urls)),
     
    path('doc/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
