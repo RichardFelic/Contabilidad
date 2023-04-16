@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'Contabilidad.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'BD_CONT_JP',
+        'NAME': 'BD_CONTABILIDAD',
         'USER': '',
         'PASSWORD': '',
         'HOST':'LAPTOP-HFNNO8HO\SQLEXPRESS',
-        'PORT': '',
+        'PORT': '1433',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
         },
